@@ -1,4 +1,3 @@
-var log = require('../core/log');
 var config = require ('../core/util.js').getConfig();
 const CandleBatcher = require('../core/candleBatcher');
 var Ichimoku = require("ichimoku");
@@ -88,10 +87,10 @@ strat.check = function() {
                 sell_signal = true;
                 this.wait_price_over_cloud = false;
                 this.wait_price_under_cloud = false;
-                log.debug("[INFO] SELL signal - " + this.wait_price_under_cloud);
+                //log.debug("[INFO] SELL signal - " + this.wait_price_under_cloud);
             }
             else{
-                log.debug("[INFO] Kijun over Tenkan BUT wait price under the cloud");
+                //log.debug("[INFO] Kijun over Tenkan BUT wait price under the cloud");
                 this.wait_price_under_cloud = true;
             }
         } 
@@ -101,10 +100,10 @@ strat.check = function() {
                 sell_signal = true;
                 this.wait_price_over_cloud = false;
                 this.wait_price_under_cloud = false;
-                log.debug("[INFO] SELL signal - " + this.wait_price_under_cloud);   
+                //log.debug("[INFO] SELL signal - " + this.wait_price_under_cloud);   
             }
             else{
-                log.debug("[INFO] Kijun over Tenkan BUT wait price under the cloud");
+                //log.debug("[INFO] Kijun over Tenkan BUT wait price under the cloud");
                 this.wait_price_under_cloud = true;
             }
         }
@@ -124,7 +123,7 @@ strat.check = function() {
                 buy_signal = true;
                 this.wait_price_over_cloud = false;
                 this.wait_price_under_cloud = false;
-                log.debug("[INFO] BUY signal");
+                //log.debug("[INFO] BUY signal");
              }
         // Mayer Multiple < 1 (bear)
         } else {
@@ -134,7 +133,7 @@ strat.check = function() {
                     buy_signal = true;
                     this.wait_price_over_cloud = false;
                     this.wait_price_under_cloud = false;
-                    log.debug("[INFO] BUY signal");
+                    //log.debug("[INFO] BUY signal");
                 }
             }
         }
